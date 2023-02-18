@@ -8,12 +8,13 @@ class ItemRate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: const [
         Icon(Icons.star,color: Color(0xffFFDD4F),),
         SizedBox(width: 5,),
         Text('4.8',style: Styles.rate16),
         SizedBox(width: 5,),
-        Text('(2390)',style: Styles.authorTitle14,),
+        Text('(2390)',style: Styles.authorTitle14),
       ],
     );
   }
