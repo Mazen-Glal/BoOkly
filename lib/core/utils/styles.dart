@@ -19,7 +19,6 @@ abstract class Styles{
     fontSize: 14,
     fontFamily: 'authorTitle',
     letterSpacing: 0,
-    // fontWeight: FontWeight.w900,
   );
 
   static const price15 = TextStyle(
