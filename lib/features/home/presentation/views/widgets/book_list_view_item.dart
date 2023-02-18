@@ -4,8 +4,8 @@ import 'package:bookly/features/home/presentation/views/widgets/item_rate.dart';
 import 'package:flutter/material.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({Key? key}) : super(key: key);
+class BookListViewItem extends StatelessWidget {
+  const BookListViewItem({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
