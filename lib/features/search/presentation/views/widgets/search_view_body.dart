@@ -20,7 +20,7 @@ class SearchViewBody extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Text(
             'Search Result',
-            style: Styles.bookTitle20.copyWith(
+            style: Styles.rate16.copyWith(
               fontFamily: ''
             ),
           ),
