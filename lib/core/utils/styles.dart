@@ -5,7 +5,6 @@ abstract class Styles{
     fontSize: 20,
     fontWeight: FontWeight.w600,
   );
-
   // the must be expressive about where this style will be used and the what the size of this text
   static const bookTitle20 = TextStyle(
     overflow: TextOverflow.ellipsis,

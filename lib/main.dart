@@ -1,10 +1,13 @@
 import 'package:bookly/constants.dart';
+import 'package:bookly/core/utils/dio_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'features/Splash/presentation/views/splash_view.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  DioHelper.initialObject();
   runApp(const BooklyApp());
 }
 
