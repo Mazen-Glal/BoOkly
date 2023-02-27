@@ -14,9 +14,7 @@ class DioHelper {
     );
   }
 
-
-
-  Future<Map<String,dynamic>> get({required String endPoint}) async {
+  static Future<Map<String,dynamic>> get({required String endPoint}) async {
     return await dio.get(endPoint).then((value) => value.data);
   }
 }
