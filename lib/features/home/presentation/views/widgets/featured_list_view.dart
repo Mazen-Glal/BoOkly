@@ -14,22 +14,15 @@ class FeaturedBooksListView extends StatelessWidget {
     return BlocBuilder<FeaturedBookCubit, FeaturedBooksStates>(
       builder: (context, state) {
         if (state is FeaturedBookSuccessState) {
-          return Padding(
+          return Container(
             padding: const EdgeInsets.only(left: 24.0),
-            child: SizedBox(
-              height: 224,
-              child: ListView.separated(
-                physics: const BouncingScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  return FeaturedListViewItem(
-                    imageUrl:
-                        state.books[index].volumeInfo!.imageLinks!.thumbnail,
-                  );
-                },
-                itemCount: state.books.length,
-                separatorBuilder: (context, index) => const SizedBox(width: 15)
-              ),
+            height: 224,
+            child: ListView.separated(
+              itemBuilder: (context, index) => FeaturedListViewItem(imageUrl: state.books[index].volumeInfo!.imageLinks!.thumbnail,),
+              separatorBuilder: (context, index) => const SizedBox(width: 15),
+              itemCount: state.books.length,
+              physics: const BouncingScrollPhysics(),
+              scrollDirection: Axis.horizontal,
             ),
           );
         } else if (state is FeaturedBookFailureState) {
