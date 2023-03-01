@@ -7,7 +7,7 @@ import 'package:dio/dio.dart';
 
 class HomeRepoImple extends HomeRepo{
   @override
-  Future<Either<Failure, List<BookModel>>> fetchBestSellerBooks() async {
+  Future<Either<Failure, List<BookModel>>> fetchNewestBooks() async {
     try{
       List<BookModel> books = [];
       var data = await DioHelper.get(
@@ -19,7 +19,6 @@ class HomeRepoImple extends HomeRepo{
       }
       return right(books);
     }catch(error){
-
       if(error is DioError)
       {
         return left (ServerFailure.fromDioError(error));
@@ -51,6 +50,7 @@ class HomeRepoImple extends HomeRepo{
     }
 
   }
+
 
 
 }
