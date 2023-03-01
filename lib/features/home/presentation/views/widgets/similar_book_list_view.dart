@@ -9,7 +9,9 @@ class SimilarBooksListView extends StatelessWidget {
       child: ListView.builder(
           physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) => const SizedBox(width: 80, child: FeaturedListViewItem()),
+          itemBuilder: (context, index) => const SizedBox(width: 80, child: FeaturedListViewItem(
+            imageUrl: '',
+          )),
           itemCount: 15
       ),
     );

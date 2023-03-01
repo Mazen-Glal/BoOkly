@@ -1,15 +1,18 @@
-import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 class FeaturedListViewItem extends StatelessWidget {
-  const FeaturedListViewItem({Key? key}) : super(key: key);
+  const FeaturedListViewItem({Key? key, required this.imageUrl}) : super(key: key);
+  final String? imageUrl;
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
+    return  Container(
       width: 150,
       height: 224,
-      child: Image(
-        fit: BoxFit.fill,
-        image: AssetImage(AssetsData.testImage),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16),
+        image: DecorationImage(
+            fit: BoxFit.fill,
+            image: NetworkImage(imageUrl!)
+        )
       ),
     );
   }

@@ -29,7 +29,9 @@ class BookDetailsViewBody extends StatelessWidget {
                     height: 284,
                     child: Padding(
                       padding: EdgeInsets.only(left: 20.0),
-                      child: FeaturedListViewItem(),
+                      child: FeaturedListViewItem(
+                        imageUrl: '',
+                      ),
                     )),
                 const SizedBox(
                   height: 13,

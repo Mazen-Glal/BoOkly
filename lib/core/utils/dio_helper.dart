@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 
 class DioHelper {
 
-  static const baseUrl = 'http://www.googleapis.com/books/v1/';
+  static const baseUrl = 'https://www.googleapis.com/books/v1/';
   static late Dio dio ;
   static void  initialObject()
   {

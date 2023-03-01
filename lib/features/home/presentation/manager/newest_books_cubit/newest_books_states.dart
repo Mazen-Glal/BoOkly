@@ -2,9 +2,7 @@ import 'package:bookly/features/home/data/models/book_models/book_model.dart';
 
 abstract class NewestBooksStates{
   const NewestBooksStates();
-
   List<Object> get props => [];
-
 }
 
 class NewestBooksInitialState extends NewestBooksStates{}
