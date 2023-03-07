@@ -10,7 +10,10 @@ class BookListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const BookDetailsView(),)),
+      onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => BookDetailsView(bookModel: bookModel))
+      ),
       child: Container(
         padding: const EdgeInsets.only(left: 24,right: 24,bottom: 5),
         child: Row(
@@ -19,7 +22,7 @@ class BookListViewItem extends StatelessWidget {
             SizedBox(
               height: 130,
               width: 90,
-              child:FeaturedListViewItem(imageUrl: bookModel.volumeInfo!.imageLinks?.smallThumbnail ?? '' ),
+              child:FeaturedListViewItem(bookModel: bookModel ),
             ),
 
             const SizedBox(width: 20),

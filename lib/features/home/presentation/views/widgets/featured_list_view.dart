@@ -18,7 +18,7 @@ class FeaturedBooksListView extends StatelessWidget {
             padding: const EdgeInsets.only(left: 24.0),
             height: 224,
             child: ListView.separated(
-              itemBuilder: (context, index) => FeaturedListViewItem(imageUrl: state.books[index].volumeInfo!.imageLinks?.thumbnail??''),
+              itemBuilder: (context, index) => FeaturedListViewItem(bookModel: state.books[index]),
               separatorBuilder: (context, index) => const SizedBox(width: 15),
               itemCount: state.books.length,
               physics: const BouncingScrollPhysics(),
@@ -28,7 +28,11 @@ class FeaturedBooksListView extends StatelessWidget {
         } else if (state is FeaturedBookFailureState) {
           return CustomErrorWidget(errorMessage: state.errorMessage);
         } else {
-          return const CustomLoadingIndicator();
+          return const SizedBox(
+            width: double.infinity,
+            height: 224,
+            child: CustomLoadingIndicator(),
+          );
         }
       },
     );

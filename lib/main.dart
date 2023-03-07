@@ -7,8 +7,8 @@ import 'package:bookly/features/home/presentation/manager/newest_books_cubit/new
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'features/Splash/presentation/views/splash_view.dart';
+
 
 void main() {
   Bloc.observer = MyBlocObserver();
@@ -25,7 +25,6 @@ class BooklyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => FeaturedBookCubit(HomeRepoImple())..fetchFeaturedBooks(),),
         BlocProvider(create: (context) => NewestBooksCubit(HomeRepoImple())..fetchNewestBooks()),
-
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

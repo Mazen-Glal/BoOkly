@@ -24,9 +24,10 @@ class NewestListView extends StatelessWidget {
         }else if(state is NewestBooksFailureState){
           return CustomErrorWidget(errorMessage: state.errorMessage);
         }else{
-          return const Padding(
-            padding: EdgeInsets.only(top: 300.0),
-            child: CustomLoadingIndicator(),
+          return Container(
+            padding: const EdgeInsets.only(top: 300.0),
+            width: double.infinity,
+            child: const CustomLoadingIndicator(),
           );
         }
       },
