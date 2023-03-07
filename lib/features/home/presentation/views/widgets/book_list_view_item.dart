@@ -1,12 +1,12 @@
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/home/data/models/book_models/book_model.dart';
 import 'package:bookly/features/home/presentation/views/book_details_view.dart';
+import 'package:bookly/features/home/presentation/views/widgets/featured_list_view_item.dart';
 import 'package:bookly/features/home/presentation/views/widgets/item_rate.dart';
 import 'package:flutter/material.dart';
-import 'package:bookly/core/utils/assets.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class BookListViewItem extends StatelessWidget {
-  const BookListViewItem({Key? key}) : super(key: key);
-
+  const BookListViewItem({Key? key, required this.bookModel}) : super(key: key);
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -16,10 +16,12 @@ class BookListViewItem extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children:  [
-            const SizedBox(
+            SizedBox(
               height: 130,
-              child: Image( image: AssetImage(AssetsData.testImage)),
+              width: 90,
+              child:FeaturedListViewItem(imageUrl: bookModel.volumeInfo!.imageLinks!.smallThumbnail,),
             ),
+
             const SizedBox(width: 20),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,14 +29,14 @@ class BookListViewItem extends StatelessWidget {
               children: [
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.55,
-                  child: const Text(
-                    'Harry Potter and the Goblet of Fire',
+                  child: Text(
+                    bookModel.volumeInfo!.title!,
                     style: Styles.bookTitle20,
                     maxLines: 2,
                   ),
                 ),
                 const SizedBox(height: 3,),
-                const Text('Rudyard Book',style: Styles.authorTitle14,),
+                Text(bookModel.volumeInfo!.authors![0],style: Styles.authorTitle14,),
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.5,
                   child: Row(
@@ -43,12 +45,14 @@ class BookListViewItem extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: const [
-                            Text('19.99 ',style: Styles.price15,),
-                            Icon(FontAwesomeIcons.dollarSign,size: 15,),
+                            Text('Free',style: Styles.price15,),
                           ],
                         ),
                       ),
-                      const ItemRate()
+                      const ItemRate(
+                        rating: 5,
+                        count: 2587,
+                      )
                     ],
                   ),
                 )

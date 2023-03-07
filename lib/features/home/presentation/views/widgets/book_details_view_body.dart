@@ -50,7 +50,10 @@ class BookDetailsViewBody extends StatelessWidget {
                       Text('Rudyard Book ',
                           style: Styles.authorTitle14.copyWith(fontSize: 19)),
                       const SizedBox(height: 17),
-                      const ItemRate(),
+                      const ItemRate(
+                        count: 250,
+                        rating: 5,
+                      ),
                     ],
                   ),
                 ),
