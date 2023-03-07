@@ -11,7 +11,7 @@ class HomeRepoImple extends HomeRepo{
     try{
       List<BookModel> books = [];
       var data = await DioHelper.get(
-          endPoint: 'volumes?Filtering=free-ebooks&Sorting=newest &q=subject:programming'
+          endPoint: 'volumes?Filtering=free-ebooks&Sorting=newest &q=computer science'
       );
       for(var item in data['items'])
       {

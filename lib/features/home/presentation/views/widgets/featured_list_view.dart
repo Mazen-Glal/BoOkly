@@ -18,7 +18,7 @@ class FeaturedBooksListView extends StatelessWidget {
             padding: const EdgeInsets.only(left: 24.0),
             height: 224,
             child: ListView.separated(
-              itemBuilder: (context, index) => FeaturedListViewItem(imageUrl: state.books[index].volumeInfo!.imageLinks!.thumbnail,),
+              itemBuilder: (context, index) => FeaturedListViewItem(imageUrl: state.books[index].volumeInfo!.imageLinks?.thumbnail??''),
               separatorBuilder: (context, index) => const SizedBox(width: 15),
               itemCount: state.books.length,
               physics: const BouncingScrollPhysics(),

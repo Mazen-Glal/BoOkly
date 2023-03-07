@@ -21,7 +21,7 @@ class HomeViewBody extends StatelessWidget {
           SizedBox(height: 1),
           Padding(
             padding: EdgeInsets.only(left: 24.0,right: 24.0,top: 24.0),
-            child: Text('Best Seller',style: Styles.titleMedium),
+            child: Text('Newest Books',style: Styles.titleMedium),
           ),
           // remember that it should be expanded..
           NewestListView()
